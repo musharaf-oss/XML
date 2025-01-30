@@ -2,16 +2,18 @@
 
 <schooldata>
 
-<user>
+<user id="1"
+xmlns:alione="https://www.walmart.com/">
 <frame>ali</frame>
-<frame>abdullah</frame>
-<frame>bob</frame>
+<lastname>ahmed</lastname>
+<emali>ali42401@gmail.com</emali>
 </user>
 
-<user>
-<frame>ali</frame>
-<frame>abdullah</frame>
-<frame>bob</frame>
+<user id="2"
+xmln:alitwo="https://www.walmart.com/">
+ <frame>ali</frame>
+<lastname>ejaz</lastname>
+<emali>ali60621@gmail.com</emali>
 </user>
 
 </schooldata>
