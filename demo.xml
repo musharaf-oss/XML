@@ -10,7 +10,7 @@ xmlns:alione="https://walmart.com/mynamespace">
 </user>
 
 <user id="2"
-xmln:alitwo="https://comitwalmart.com/mynamespace">
+xmlns:alitwo="https://comitwalmart.com/mynamespace">
  <frame>ali</frame>
 <lastname>ejaz</lastname>
 <emali>ali60621@gmail.com</emali>
