@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<schooldata>
-
-<user id="1"
-xmlns:alione="https://walmart.com/mynamespace">
+<schooldata
+xmlns:alione="https://walmart.com/mynamespace"
+xmlns:alitwo="https://comitwalmart.com/mynamespace">
+<user id="1">
 <frame>ali</frame>
 <lastname>ahmed</lastname>
 <emali>ali42401@gmail.com</emali>
 </user>
 
-<user id="2"
-xmlns:alitwo="https://comitwalmart.com/mynamespace">
+<user id="2">
  <frame>ali</frame>
 <lastname>ejaz</lastname>
 <emali>ali60621@gmail.com</emali>
