@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" herf="transform.xsl"?> 
 
-<schooldata
-xmlns:a="https://walmart.com/mynamespace"
-xmlns:b="https://comitwalmart.com/mynamespace">
-<user id="1">
-<a:frame>ali</a:frame>
-<a:lastname>ahmed</a:lastname>
-<a:emali>ali42401@gmail.com</a:emali>
-</user>
+<entry>
+<data>
+  <name>documentry</name>
+  <writer>jon</writer>
+  <year>1990</year>
+</data>
+<data>
+  <name>classsic world</name>
+  <writer>murphy</writer>
+  <year>2003</year>
+  </data>
+<data>
+  <name>adapture</name>
+  <writer>dean</writer>
+  <year>1994</year>
+  </data>
+</entry>
 
-<user id="2">
- <b:frame>ali</b:frame>
-<b:lastname>ejaz</b:lastname>
-<b:emali>ali60621@gmail.com</b:emali>
-</user>
 
-</schooldata>
