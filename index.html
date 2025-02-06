@@ -13,8 +13,39 @@
         // var close="34"
         // var close="39"
         // console.log(close);
-        let flower={name : "chameli" , color : 'yellow'}
-        document.write(flower.color);
+        // let flower={name : "chameli" , color : 'yellow'}
+        // document.write(flower.color);
+
+
+
+    // var student={name: "syed musharaf",class:"2nd year" ,section:"a5"}
+    // document.write("<br><h1> old value</h1>")
+    // document.write("<br>",student.name)
+    // document.write("<br>",student.class)
+    // document.write("<br>",student.section)
+
+    // document.write("<br><h1>New value</h1>")
+    // student.name="syedmehmood";
+    // student.class="1st year"
+    // student.section="A6"
+    // document.write("<br>",student.name)
+    // document.write("<br>",student.class)
+    // document.write("<br>",student.section)
+
+    document.write("<h1>json data<h1>");
+        var data={
+            "student":"amna",
+            "age":"19",
+            "eligible":true,
+            "grade":["12","44","32"],
+            "intro":{"faculty":"sadaf","fname":"akhter","location":"nazimabad"}
+        }
+        document.write(data.student+"<br>")
+        document.write(data.age+"<br>")
+        document.write(data.grade[2]+"<br>")
+        document.write(data.intro.faculty+"<br>")
+
+     
     </script>
 </body>
 </html>
