@@ -8,7 +8,43 @@
 </head>
 
 <body>
+    <h2>local storage CRUD</h2>
+    <label for="name">name</label>
+    <input type="text" id="name" placeholder="enter name"><br>
+    <label for="age">age</label>
+    <input type="number" id="age" placeholder="enter age"><br>
+
+
+    <button onclick="createrecord()">create button</button>
+    <button onclick="readrecord()">read button</button>
+    <h4>result</h4>
+    <p id="result">click a button to see the result </p>
     <script>
+
+function createrecord() {
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            if (name && age) {
+                const person = { name, age }
+                localStorage.setItem("person", JSON.stringify(person))
+                document.getElementById("result").innerText = "record created successfully"
+            } else {
+                document.getElementById("result").innerText = "please enter all the fields"
+            }
+        };
+        function readrecord() {
+            const person =localStorage.getItem("person");
+            if (person){
+                const parsedperson= JSON.parse(person)
+                document.getElementById("name").value= parsedperson.name;
+                document.getElementById("age").value= parsedperson.age;
+                document.getElementById("result").innertext=
+                `name :${parsedperson.name},age:${parsedperson.age} `
+            }else{
+                document.getElementById("result").innertext="no record found"
+            }
+        }
+
         //     let head="10"
         //     head="11"
         //     console.log(head);
@@ -149,20 +185,32 @@
         //         break;
         // }
 
-    //     const number = [10, 20, 30]
-    //     const [a, b, c] = number;
-    //     console.log(a);
+        //     const number = [10, 20, 30]
+        //     const [a, b, c] = number;
+        //     console.log(a);
 
 
-    // const product=["number1","number2","number3","number4","number5","number6"]
-    // const [e,f,g,...rest] = product;
-    // console.log(rest);
+        // const product=["number1","number2","number3","number4","number5","number6"]
+        // const [e,f,g,...rest] = product;
+        // console.log(rest);
 
-        const student = {name:"ali",age:"45",height:"5.5"}
-        const {name,...rest} = student;
-        console.log(name);
-        console.log(rest);
+        // const student = {name:"ali",age:"45",height:"5.5"}
+        // const {name,...rest} = student;
+        // console.log(name);
+        // console.log(rest);
+
+
+   
+        
+        // function clearinput() {
+        //     document.getElementById("name").value = ""
+        //     document.getElementById("age").value = ""
+        // }
     </script>
+
+
+
+
 </body>
 
 </html>
