@@ -8,42 +8,100 @@
 </head>
 
 <body>
-    <h2>local storage CRUD</h2>
-    <label for="name">name</label>
-    <input type="text" id="name" placeholder="enter name"><br>
-    <label for="age">age</label>
-    <input type="number" id="age" placeholder="enter age"><br>
+ 
 
 
-    <button onclick="createrecord()">create button</button>
-    <button onclick="readrecord()">read button</button>
-    <h4>result</h4>
-    <p id="result">click a button to see the result </p>
-    <script>
+<h2>Student marksheet generator</h2>
+<div class="container">
+    <label >student name <input type="text" id="name" /></label><br>
+    <label>maths <input type="number" id="maths" /></label><br>
+    <label>english <input type="number" id="english" /></label><br>
+    <label>science <input type="number" id="science" /></label><br>
+    <button onclick="saveData()">save data</button>
+    <button onclick="">asas</button>
+    <button onclick="">asas</button>
+</div>
+<div id="marksheet"></div>
+  
+  <script>
 
-function createrecord() {
-            const name = document.getElementById("name").value;
-            const age = document.getElementById("age").value;
-            if (name && age) {
-                const person = { name, age }
-                localStorage.setItem("person", JSON.stringify(person))
-                document.getElementById("result").innerText = "record created successfully"
-            } else {
-                document.getElementById("result").innerText = "please enter all the fields"
-            }
-        };
-        function readrecord() {
-            const person =localStorage.getItem("person");
-            if (person){
-                const parsedperson= JSON.parse(person)
-                document.getElementById("name").value= parsedperson.name;
-                document.getElementById("age").value= parsedperson.age;
-                document.getElementById("result").innertext=
-                `name :${parsedperson.name},age:${parsedperson.age} `
-            }else{
-                document.getElementById("result").innertext="no record found"
-            }
-        }
+
+function saveData(){
+    let studentname = document.getElementById("name").value;
+    let maths = document.getElementById("maths").value;
+    let english = document.getElementById("english").value;
+    let science = document.getElementById("science").value;
+
+    if ( !name || !maths || !science || !english){
+        alert("please enter all feilds")
+        return;
+    }
+    let studentdata ={name,maths,english,science};
+    sessionStorage.setItem("marksheet",JSON.stringify(studentdata));
+    alert("marksheet has saved")
+
+}
+
+
+
+
+
+
+
+
+
+
+// function createrecord() {
+//             const name = document.getElementById("name").value;
+//             const age = document.getElementById("age").value;
+//             if (name && age) {
+//                 const person = { name, age }
+//                 localStorage.setItem("person", JSON.stringify(person))
+//                 document.getElementById("result").innerText = "record created successfully"
+//             } else {
+//                 document.getElementById("result").innerText = "please enter all the fields"
+//             }
+//         };
+//         function readrecord() {
+//             const person =localStorage.getItem("person");
+//             if (person){
+//                 const parsedperson= JSON.parse(person)
+//                 document.getElementById("name").value= parsedperson.name;
+//                 document.getElementById("age").value= parsedperson.age;
+//                 document.getElementById("result").innerText=`name :${parsedperson.name},age:${parsedperson.age} `;
+//             }else{
+//                 document.getElementById("result").innerText="no record found"
+//             }
+//         }
+
+//         function updaterecord(){
+//             const person = localStorage.getItem("person")
+//             if(person){
+//                 const name = document.getElementById("name").value
+//                 const age = document.getElementById("age").value;
+
+//                 if(name && age){
+//                     const updatedPerson = {name,age};
+//                     localStorage.setItem("person", JSON.stringify(updatedPerson));
+//                     document.getElementById("result").innerText="record updated";
+//                     clearInputs();
+//                 }
+//                 else{
+//                     document.getElementById("result").innerText="please enter all feilds first";
+//                 }
+//             } else{
+//                 document.getElementById("result").innertext="no data found to update"
+//             }
+//         }
+//         function daleterecord(){
+//             localStorage.removeItem("person");
+//             document.getElementById("result").innerText="record delete"
+//             clearinput();
+//         }
+//           function clearInputs() {
+//             document.getElementById("name").value = ""
+//             document.getElementById("age").value = ""
+//         }
 
         //     let head="10"
         //     head="11"
