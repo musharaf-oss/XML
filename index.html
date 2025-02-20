@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
+<style>
+    th,td{border:1px solid black;}
+</style>
 <body>
  
 
@@ -18,31 +20,60 @@
     <label>english <input type="number" id="english" /></label><br>
     <label>science <input type="number" id="science" /></label><br>
     <button onclick="saveData()">save data</button>
-    <button onclick="">asas</button>
-    <button onclick="">asas</button>
+    <button onclick="displayData()">show result</button>
+    <button onclick="clearData()">clear data</button>
 </div>
-<div id="marksheet"></div>
-  
+<div id="marksheet"></div> 
+
   <script>
 
 
 function saveData(){
     let studentname = document.getElementById("name").value;
-    let maths = document.getElementById("maths").value;
+    let maths =  document.getElementById("maths").value;
     let english = document.getElementById("english").value;
     let science = document.getElementById("science").value;
 
-    if ( !name || !maths || !science || !english){
-        alert("please enter all feilds")
+    if ( !studentname || !maths || !science || !english){
+        alert ("please enter all your feilds");
         return;
     }
-    let studentdata ={name,maths,english,science};
-    sessionStorage.setItem("marksheet",JSON.stringify(studentdata));
-    alert("marksheet has saved")
+    let studentData ={studentname,maths,english,science};
+    sessionStorage.setItem("marksheet", JSON.stringify(studentData));
+    alert ("marksheet has saved");
 
 }
 
+function displayData(){
+    let data = sessionStorage.getItem("marksheet");
+    if (!data){
+        document.getElementById("marksheet").innerHTML="<P>no mark sheet found</P>";
+        return;
+    }
+    let { studentname,maths,english,science}=JSON.parse(data);
+    let total = Number(maths)+Number(english)+Number(science);
+    let percentage=(total/300*100).toFixed(2);
+    document.getElementById("marksheet").innerHTML= `
+    <h2>Marksheet</h2>
+<table>
+     <tr><th>Student Name</th><td> ${name} </td></tr>
+     <tr><th>maths</th><td> ${maths} </td></tr>
+     <tr><th>english</th><td> ${english} </td></tr>
+     <tr><th>science</th><td> ${science} </td></tr>
+    <tr><th>total marks</th><td> ${total}/300 </td></tr>
+    <tr><th>percentage</th><td> ${percentage}% </td></tr>
+</table> 
+`;
+}
+function clearData() {
+    sessionStorage.removeItem("marksheet");
+document.getElementById("marksheet").innerHTML="";
+document.getElementById("name").value=""
+document.getElementById("maths").value=""
+document.getElementById("english").value=""
+document.getElementById("science").value=""
 
+}
 
 
 
