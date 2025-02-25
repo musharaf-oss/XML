@@ -12,7 +12,7 @@
 <body>
  
 
-
+<!-- 
 <h2>Student marksheet generator</h2>
 <div class="container">
     <label >student name <input type="text" id="name" /></label><br>
@@ -23,63 +23,121 @@
     <button onclick="displayData()">show result</button>
     <button onclick="clearData()">clear data</button>
 </div>
-<div id="marksheet"></div> 
+<div id="marksheet"></div>  -->
+
+<!-- <p>orignal tag</p>
+<p>another paragrah</p>
+<button onclick="addtext()">add text</button> -->
+
+
+<!-- <p name="para">paragrah</p>
+<p name="para">paragrah aassddsaff</p>
+<button onclick="textChange()">add text</button> -->
+
+<!-- <div class="para" >green</div>
+<div class="para" >red</div>
+<button onclick="textchange()">add</button> -->
+
 
   <script>
 
 
-function saveData(){
-    let studentname = document.getElementById("name").value;
-    let maths =  document.getElementById("maths").value;
-    let english = document.getElementById("english").value;
-    let science = document.getElementById("science").value;
+function create(){
+    let count=0;
 
-    if ( !studentname || !maths || !science || !english){
-        alert ("please enter all your feilds");
-        return;
+    return function(){
+        count++;
+        console.log(count);
     }
-    let studentData ={studentname,maths,english,science};
-    sessionStorage.setItem("marksheet", JSON.stringify(studentData));
-    alert ("marksheet has saved");
-
 }
+let counter=create()
+counter();
+counter();
+counter();
 
-function displayData(){
-    let data = sessionStorage.getItem("marksheet");
-    if (!data){
-        document.getElementById("marksheet").innerHTML="<P>no mark sheet found</P>";
-        return;
-    }
-    let { studentname,maths,english,science}=JSON.parse(data);
-    let total = Number(maths)+Number(english)+Number(science);
-    let percentage=(total/300*100).toFixed(2);
-    document.getElementById("marksheet").innerHTML= `
-    <h2>Marksheet</h2>
-<table>
-     <tr><th>Student Name</th><td> ${name} </td></tr>
-     <tr><th>maths</th><td> ${maths} </td></tr>
-     <tr><th>english</th><td> ${english} </td></tr>
-     <tr><th>science</th><td> ${science} </td></tr>
-    <tr><th>total marks</th><td> ${total}/300 </td></tr>
-    <tr><th>percentage</th><td> ${percentage}% </td></tr>
-</table> 
-`;
-}
-function clearData() {
-    sessionStorage.removeItem("marksheet");
-document.getElementById("marksheet").innerHTML="";
-document.getElementById("name").value=""
-document.getElementById("maths").value=""
-document.getElementById("english").value=""
-document.getElementById("science").value=""
 
-}
 
-const number=[1,2,3,4,5,6,7,8,9]; 
-const square=number.map(num=>num*2);
+// let mytext="hello";
+// function text(){
+//     console.log(mytext);
+// }
+// text()
+// console.log(mytext);
 
-console.log(number);
-console.log(square);
+// function change(){
+//     let mytext="hello";
+//     console.log(mytext);
+// }
+// change()
+// console.log(mytext);
+// function textchange(){
+//     let word=document.getElementsByClassName("para")[1]
+//     word.textContent="new text is added";
+// }
+
+// function textChange(){
+//     let element= document.getElementsByName("para");
+//     element[1].textContent= "new text is added";
+// }
+
+// function addtext(){
+//     let data= document.getElementsByTagName("p");
+//     data[0].textContent="new text is added"
+// }
+
+
+// function saveData(){
+//     let studentname = document.getElementById("name").value;
+//     let maths =  document.getElementById("maths").value;
+//     let english = document.getElementById("english").value;
+//     let science = document.getElementById("science").value;
+
+//     if ( !studentname || !maths || !science || !english){
+//         alert ("please enter all your feilds");
+//         return;
+//     }
+//     let studentData ={studentname,maths,english,science};
+//     sessionStorage.setItem("marksheet", JSON.stringify(studentData));
+//     alert ("marksheet has saved");
+
+// }
+
+// function displayData(){
+//     let data = sessionStorage.getItem("marksheet");
+//     if (!data){
+//         document.getElementById("marksheet").innerHTML="<P>no mark sheet found</P>";
+//         return;
+//     }
+//     let { studentname,maths,english,science}=JSON.parse(data);
+//     let total = Number(maths)+Number(english)+Number(science);
+//     let percentage=(total/300*100).toFixed(2);
+//     document.getElementById("marksheet").innerHTML= `
+//     <h2>Marksheet</h2>
+// <table>
+//      <tr><th>Student Name</th><td> ${name} </td></tr>
+//      <tr><th>maths</th><td> ${maths} </td></tr>
+//      <tr><th>english</th><td> ${english} </td></tr>
+//      <tr><th>science</th><td> ${science} </td></tr>
+//     <tr><th>total marks</th><td> ${total}/300 </td></tr>
+//     <tr><th>percentage</th><td> ${percentage}% </td></tr>
+// </table> 
+// `;
+// }
+// function clearData() {
+//     sessionStorage.removeItem("marksheet");
+// document.getElementById("marksheet").innerHTML="";
+// document.getElementById("name").value=""
+// document.getElementById("maths").value=""
+// document.getElementById("english").value=""
+// document.getElementById("science").value=""
+
+// }
+
+// const number=[1,2,3,4,5,6,7,8,9]; 
+// const square=number.map(num=>num*2);
+
+// console.log(number);
+// console.log(square);
 
 
 // function createrecord() {
